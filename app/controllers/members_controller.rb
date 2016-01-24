@@ -17,7 +17,6 @@ class MembersController < ApplicationController
 								@assignees.push([participant, "Sorry no match was made, please refresh the match"])
 					  end
 				end
-
 	  end
 
 	  def new
