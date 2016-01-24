@@ -24,3 +24,7 @@ gem 'spring',        group: :development
 
 # Devise gem to handle login
 gem 'devise', '~> 3.5'
+#bootstrap
+gem 'bootstrap-sass', '~> 3.3'
+# Simpleform
+gem 'simple_form', '~> 3.2'

@@ -1,0 +1,11 @@
+<div class="member-info">
+		<h1><%= @member.first_name %> <%= @member.last_name %></h1>
+
+		<p>Partner: <%= @member.partner %></p>
+		<p>Last assigned to: <%= @member.last_assigned %></p>
+</div>
+
+<div class="button-box">
+		<%= link_to "edit", edit_member_path, class: "btn btn-default" %>
+		<%= link_to "Delete", member_path, method: :delete, class: "btn btn-default" %>
+</div>
