@@ -44,7 +44,7 @@ private
 	end
 
 	def member_params
-		params.require(:member).permit(:first_name, :last_name, :email, :, :)
+		params.require(:member).permit(:first_name, :last_name, :partner, :last_assigned)
 	end
 
 end
