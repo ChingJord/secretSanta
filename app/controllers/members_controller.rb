@@ -11,7 +11,7 @@ class MembersController < ApplicationController
 						if !@leftovers.empty?
 								@assign = @leftovers.sample
 								@already_assigned.push(@assign)
-							  @assignees.push([participant, @assign])
+							  @assignees.push([participant, @assign.name])
 							  Member.update(participant.id, :last_assigned => @assign.name)
 						else
 								@assignees.push([participant, "Sorry no match was made, please refresh the match"])
