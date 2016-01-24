@@ -9,10 +9,16 @@ class MembersController < ApplicationController
 				@participants.each do |participant|
 						@leftovers = @participants - @already_assigned - [participant]
 						if !@leftovers.empty?
-								@assign = @leftovers.sample
-								@already_assigned.push(@assign)
-							  @assignees.push([participant, @assign.name])
-							  Member.update(participant.id, :last_assigned => @assign.name)
+
+								@assign = choose_match(participant, @leftovers)
+
+								if !(@assign == [])
+										@already_assigned.push(@assign)
+									  @assignees.push([participant, @assign.name])
+									  Member.update(participant.id, :last_assigned => @assign.name)
+								else
+										@assignees.push([participant, "Sorry no match was made, please refresh the match"])
+							  end
 						else
 								@assignees.push([participant, "Sorry no match was made, please refresh the match"])
 					  end
@@ -60,6 +66,20 @@ private
 		def member_params
 				params.require(:member).permit(:name, :partner, :last_assigned)
 		end
+
+		def choose_match(participant, matches)
+	  	try = matches.sample
+	  	if try.name.to_s.downcase == participant.partner.to_s.downcase || try.name.to_s.downcase == participant.last_assigned.to_s.downcase
+	  		new_list = matches - [try]
+	  		if !new_list.empty?
+	  			choose_match(participant, new_list)
+	  		else
+	  			return []
+	  		end
+	  	else
+	  		return try
+	  	end
+	  end
 
 end
 
