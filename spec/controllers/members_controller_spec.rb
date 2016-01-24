@@ -12,7 +12,7 @@ RSpec.describe MembersController, type: :controller do
 	  it "populates an array of members" do
 	    member = FactoryGirl.create(:member)
 	    get :index
-	    assigns(:member).should eq([member])
+	    assigns(:members).should == [member]
 	  end
 
 	  it "renders the :index view" do
@@ -55,7 +55,7 @@ RSpec.describe MembersController, type: :controller do
 	describe 'PUT update' do
 
 	  before :each do
-	    @member = FactoryGirl.create(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
+	    @member = FactoryGirl.create(:member)
 	  end
 
     it "located the requested @member" do
@@ -81,11 +81,11 @@ RSpec.describe MembersController, type: :controller do
 	describe 'DELETE destroy' do
 
 	  before :each do
-	    @member = FactoryGirl.create(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
+	    @member = FactoryGirl.create(:member)
 	  end
 
 	  it "deletes the member" do
-	    expect{delete :destroy, id: @member}.to change(Member,:member).by(-1)
+	    expect{delete :destroy, id: @member}.to change(Member,:count).by(-1)
 	  end
 
 	  it "redirects to home page" do
