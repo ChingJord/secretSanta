@@ -1,8 +1,14 @@
-<h3>List of current members</h3>
-<ul>
-	<% @members.each do |member| %>
-		<%= link_to member do %>
-				<li><%= member.first_name %> <%= member.last_name %></li>
-		<% end %>
-	<% end %>
-</ul>
+<div class="member-list">
+		<h3>List of current members</h3>
+		<ul>
+			<% @members.each do |member| %>
+				<%= link_to member do %>
+						<li><%= member.first_name %> <%= member.last_name %></li>
+				<% end %>
+			<% end %>
+		</ul>
+</div>
+
+<div class="button-box">
+		<%= link_to "New Sectre Santa", member_path, class: "btn btn-default" %>
+</div>
