@@ -14,8 +14,7 @@
 ActiveRecord::Schema.define(version: 20160124012624) do
 
   create_table "members", force: true do |t|
-    t.string   "first_name",    default: "", null: false
-    t.string   "last_name",     default: "", null: false
+    t.string   "name",          default: "", null: false
     t.string   "partner"
     t.string   "last_assigned"
     t.datetime "created_at"

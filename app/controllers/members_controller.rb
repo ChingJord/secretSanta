@@ -3,10 +3,7 @@ class MembersController < ApplicationController
 
 	  def index
 		  	@members = Member.all
-		  	@participants = []
-		  	@members.each do |member|
-		  			@participants.push(member.first_name + ' ' + member.last_name)
-		  	end
+		  	@participants = @members.clone
 		  	@already_assigned = []
 		  	@assignees = []
 				@participants.each do |participant|
@@ -14,7 +11,8 @@ class MembersController < ApplicationController
 						if !@leftovers.empty?
 								@assign = @leftovers.sample
 								@already_assigned.push(@assign)
-							  @assignees.push([participant[0], @assign])
+							  @assignees.push([participant, @assign])
+							  Member.update(participant.id, :last_assigned => @assign.name)
 						else
 								@assignees.push([participant, "Sorry no match was made, please refresh the match"])
 					  end
@@ -61,7 +59,7 @@ private
 		end
 
 		def member_params
-				params.require(:member).permit(:first_name, :last_name, :partner, :last_assigned)
+				params.require(:member).permit(:name, :partner, :last_assigned)
 		end
 
 end
