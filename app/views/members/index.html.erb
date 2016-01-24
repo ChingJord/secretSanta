@@ -1,14 +1,38 @@
+<div>
+		<h1>Welcome to Secret Santa</h1>
+		<p>The list below shows all current participants. To add a new participant please click the "New Participant" button in the navigation bar.</p>
+		<p>The Table below show the current Secret Santa matches. If you would like to renew this list please refresh the page.</p>
+</div>
+
 <div class="member-list">
-		<h3>List of current members</h3>
+		<h3>List of current participants</h3>
 		<ul>
-			<% @members.each do |member| %>
-				<%= link_to member do %>
-						<li><%= member.first_name %> <%= member.last_name %></li>
+				<% @members.each do |member| %>
+					<%= link_to member do %>
+							<li><%= member.first_name %> <%= member.last_name %></li>
+					<% end %>
 				<% end %>
-			<% end %>
 		</ul>
 </div>
 
-<div class="button-box">
-		<%= link_to "New Sectre Santa", member_path, class: "btn btn-default" %>
+<div class="secret-santa-table">
+		<h3>Secret Santa List</h3>
+		<div class="table table-bordered">
+				<table>
+						<thead>
+								<tr>
+										<th>Member Name</th>
+										<th>Secret Santa Pick</th>
+								</tr>
+						</thead>
+						<tbody>
+								<% @assignees.each do |assignee| %>
+										<tr>
+												<td><%= assignee[0] %></td>
+												<td><%= assignee[1] %></td>
+										</tr>
+								<% end %>
+						</tbody>
+				</table>
+		</div>
 </div>
