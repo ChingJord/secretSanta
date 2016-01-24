@@ -11,15 +11,12 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-
-# Devise gem to handle login
-# gem 'devise', '~> 3.5'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3'
 # Simpleform
 gem 'simple_form', '~> 3.2'
-
 
 group :development, :test do
 		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
