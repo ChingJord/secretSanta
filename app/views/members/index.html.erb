@@ -1,2 +1,8 @@
-<h1>Members#index</h1>
-<p>Find me in app/views/members/index.html.erb</p>
+<h3>List of current members</h3>
+<ul>
+	<% @members.each do |member| %>
+		<%= link_to member do %>
+				<li><%= member.first_name %> <%= member.last_name %></li>
+		<% end %>
+	<% end %>
+</ul>
