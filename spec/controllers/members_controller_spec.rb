@@ -25,13 +25,13 @@ RSpec.describe MembersController, type: :controller do
 	describe "GET #show" do
 
 	  it "assigns the requested member to @member" do
-	    member = FactoryGirl.build(:member)
+	    member = FactoryGirl.create(:member)
 	    get :show, id: member
 	    assigns(:member).should eq(member)
 	  end
 
 	  it "renders the #show view" do
-	    get :show, id: FactoryGirl.build(:member)
+	    get :show, id: FactoryGirl.create(:member)
 	    response.should render_template :show
 	  end
 
@@ -55,7 +55,7 @@ RSpec.describe MembersController, type: :controller do
 	describe 'PUT update' do
 
 	  before :each do
-	    @member = FactoryGirl.build(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
+	    @member = FactoryGirl.create(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
 	  end
 
     it "located the requested @member" do
@@ -81,7 +81,7 @@ RSpec.describe MembersController, type: :controller do
 	describe 'DELETE destroy' do
 
 	  before :each do
-	    @member = FactoryGirl.build(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
+	    @member = FactoryGirl.create(:member, name: "Lawrence", partner: "Smith", last_assigned: "")
 	  end
 
 	  it "deletes the member" do
