@@ -32,7 +32,6 @@ GEM
     autoprefixer-rails (6.3.1)
       execjs
       json
-    bcrypt (3.1.10)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -52,14 +51,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    devise (3.5.5)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
-    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -101,6 +92,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+<<<<<<< HEAD
     nenv (0.2.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -112,6 +104,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+=======
+>>>>>>> a615f0740700b605773dce601256065f49be86ba
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -131,6 +125,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
+<<<<<<< HEAD
     rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -157,6 +152,10 @@ GEM
       rspec-mocks (~> 3.4.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
+=======
+    rdoc (4.2.1)
+      json (~> 1.4)
+>>>>>>> a615f0740700b605773dce601256065f49be86ba
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -189,22 +188,31 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+<<<<<<< HEAD
     warden (1.2.4)
       rack (>= 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+=======
+>>>>>>> a615f0740700b605773dce601256065f49be86ba
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3)
+<<<<<<< HEAD
   capybara
   devise (~> 3.5)
   factory_girl_rails
   faker
   guard-rspec
   launchy
+=======
+  coffee-rails (~> 4.0.0)
+  jbuilder (~> 2.0)
+  jquery-rails
+>>>>>>> a615f0740700b605773dce601256065f49be86ba
   rails (= 4.1.8)
   rspec-rails (~> 3.4)
   sass-rails (~> 4.0.3)

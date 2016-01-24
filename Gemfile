@@ -14,7 +14,7 @@ gem 'turbolinks'
 
 
 # Devise gem to handle login
-gem 'devise', '~> 3.5'
+# gem 'devise', '~> 3.5'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3'
 # Simpleform
