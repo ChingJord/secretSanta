@@ -11,9 +11,13 @@ class MembersController < ApplicationController
 		  	@assignees = []
 				@participants.each do |participant|
 						@leftovers = @participants - @already_assigned - [participant]
-						@assign = @leftovers.sample
-						@already_assigned.push(@assign)
-					  @assignees.push([participant, @assign])
+						if !@leftovers.empty?
+								@assign = @leftovers.sample
+								@already_assigned.push(@assign)
+							  @assignees.push([participant[0], @assign])
+						else
+								@assignees.push([participant, "Sorry no match was made, please refresh the match"])
+					  end
 				end
 
 	  end
