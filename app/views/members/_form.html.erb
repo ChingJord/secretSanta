@@ -1,22 +1,21 @@
 <%= simple_form_for @member do |f| %>
 
-	<% if @member.errors.any? %>
-		<div class="errors">
-			<ul>
-				<% @member.errors.full_message.each do |e| %>
-					<li><%= e %></li>
-				<% end %>
-			</ul>
+		<% if @member.errors.any? %>
+				<div class="errors">
+						<ul>
+								<% @member.errors.full_message.each do |e| %>
+										<li><%= e %></li>
+								<% end %>
+						</ul>
+				</div>
+		<% end %>
+
+		<div class="panel-body">
+			  <%= f.input :name, input_html: { class: "form-control" }, placeholder: 'Participants Full Name' %>
+			  <%= f.input :partner, input_html: { class: "form-control" },placeholder: 'Partners Full Name' %>
+			  <div class="button-box">
+			  		<%= f.button :submit, class: "btn btn-primary" %>
+			  </div>
 		</div>
-	<% end %>
-
-	<div class="panel-body">
-
-	  <%= f.input :name, input_html: { class: "form-control" } %>
-	  <%= f.input :partner, input_html: { class: "form-control" } %>
-	  <%= f.input :last_assigned, input_html: { class: "form-control" } %>
-
-	  <%= f.button :submit, class: "btn btn-primary" %>
-	</div>
 
 <% end %>
